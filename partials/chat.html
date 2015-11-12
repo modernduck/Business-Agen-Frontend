@@ -1,0 +1,394 @@
+<aside class="chat">
+	<div class="chat-content">
+		<div class="chat-wrapper" mb-scrollbar="scrollbarConfigInner">
+			
+			<button class="btn btn-link close" ui-chat-toggle><span class="fa fa-times fa-lg text-info"></span></button>
+
+			<svg x="0px" y="0px" viewBox="0 0 250 180">
+				<defs>
+					<mask id="mask_bg" x="0" y="0" with="250px" height="160px">
+						<path fill="#fff" d="M0,0 L250,0 L 250,140 C 165 130 55 130 0 140 Z"/>
+					</mask>
+					<mask id="mask_avatar" x="0" y="0" width="250" height="250" maskUnits="userSpaceOnUse">
+						<path fill="#FFFFFF" d="M218.5,112.667C218.5,123.333,126.666,215,116.166,215S13.832,126,13.832,112.667 s87.5-102.333,102.333-102.333S218.5,102,218.5,112.667z"/>
+					</mask>
+					<filter id="blur">
+						<feGaussianBlur stdDeviation="2"/>
+					</filter>
+				</defs>
+				<g style="filter:url(#blur);mask:url(#mask_bg);">
+					<image x="0" y="-40px" width="250px" height="250px" xlink:href="assets/img/avatar/avatar200.png" />
+				</g>
+				<g transform="translate(50,30)">
+					<image x="0"  y="0" transform="scale(0.7)" style="fill:#F4F2FB;mask:url(#mask_avatar)" width="230" height="230" xlink:href="assets/img/avatar/avatar200.png" />
+				</g>
+			</svg>
+
+			<h4 class="chat-owner text-center">John Smith</h4>
+			<small class="chat-owner-status text-center">You are <strong>online</strong></small>
+
+			<div class="form-group search">
+				<input type="text" placeholder="Search...">
+				<span class="icon-search icon-lg"></span>
+			</div>
+
+			<ul class="user-list">
+				<li class="group-name">Favourite</li>
+				<li>
+					<a href="" ng-click="enter($event)">
+						<div class="avatar">
+							<svg preserveAspectRatio="xMinYMin meet" viewBox="0 0 230 230">
+								<clipPath id="clip1">
+									<path fill="#FFFFFF" d="M218.5,112.667C218.5,123.333,126.666,215,116.166,215S13.832,126,13.832,112.667 s87.5-102.333,102.333-102.333S218.5,102,218.5,112.667z"/>
+								</clipPath>
+								<image x="0"  y="0" style="" width="230" height="230" xlink:href="assets/img/avatar/avatar200.png" clip-path="url(#clip1)" />
+							</svg>
+							<span class="badge badge-danger">2</span>
+						</div>
+						<div class="name">
+							<p>John Smith</p>
+							<small>User online</small>
+						</div>
+						<div class="status active"><span></span></div>
+					</a>
+				</li>
+				<li>
+					<a href="" ng-click="enter($event)">
+						<div class="avatar">
+							<svg preserveAspectRatio="xMinYMin meet" viewBox="0 0 230 230">
+								<clipPath id="clip1">
+									<path fill="#FFFFFF" d="M218.5,112.667C218.5,123.333,126.666,215,116.166,215S13.832,126,13.832,112.667 s87.5-102.333,102.333-102.333S218.5,102,218.5,112.667z"/>
+								</clipPath>
+								<image x="0"  y="0" style="" width="230" height="230" xlink:href="assets/img/avatar/avatar200.png" clip-path="url(#clip1)" />
+							</svg>
+						</div>
+						<div class="name">
+							<p>John Smith</p>
+							<small>User is offline</small>
+						</div>
+						<div class="status"><span></span></div>
+					</a>
+				</li>
+				<li>
+					<a href="" ng-click="enter($event)">
+						<div class="avatar">
+							<svg preserveAspectRatio="xMinYMin meet" viewBox="0 0 230 230">
+								<clipPath id="clip1">
+									<path fill="#FFFFFF" d="M218.5,112.667C218.5,123.333,126.666,215,116.166,215S13.832,126,13.832,112.667 s87.5-102.333,102.333-102.333S218.5,102,218.5,112.667z"/>
+								</clipPath>
+								<image x="0"  y="0" style="" width="230" height="230" xlink:href="assets/img/avatar/avatar200.png" clip-path="url(#clip1)" />
+							</svg>
+						</div>
+						<div class="name">
+							<p>John Smith</p>
+							<small>User is offline</small>
+						</div>
+						<div class="status"><span></span></div>
+					</a>
+				</li>
+				<li>
+					<a href="" ng-click="enter($event)">
+						<div class="avatar">
+							<svg preserveAspectRatio="xMinYMin meet" viewBox="0 0 230 230">
+								<clipPath id="clip1">
+									<path fill="#FFFFFF" d="M218.5,112.667C218.5,123.333,126.666,215,116.166,215S13.832,126,13.832,112.667 s87.5-102.333,102.333-102.333S218.5,102,218.5,112.667z"/>
+								</clipPath>
+								<image x="0"  y="0" style="" width="230" height="230" xlink:href="assets/img/avatar/avatar200.png" clip-path="url(#clip1)" />
+							</svg>
+						</div>
+						<div class="name">
+							<p>John Smith</p>
+							<small>User is offline</small>
+						</div>
+						<div class="status"><span></span></div>
+					</a>
+				</li>
+				<li class="group-name">More friends</li>
+				<li>
+					<a href="" ng-click="enter($event)">
+						<div class="avatar">
+							<svg preserveAspectRatio="xMinYMin meet" viewBox="0 0 230 230">
+								<clipPath id="clip1">
+									<path fill="#FFFFFF" d="M218.5,112.667C218.5,123.333,126.666,215,116.166,215S13.832,126,13.832,112.667 s87.5-102.333,102.333-102.333S218.5,102,218.5,112.667z"/>
+								</clipPath>
+								<image x="0"  y="0" style="" width="230" height="230" xlink:href="assets/img/avatar/avatar200.png" clip-path="url(#clip1)" />
+							</svg>
+						</div>
+						<div class="name">
+							<p>John Smith</p>
+							<small>User is offline</small>
+						</div>
+						<div class="status"><span></span></div>
+					</a>
+				</li>
+				<li>
+					<a href="" ng-click="enter($event)">
+						<div class="avatar">
+							<svg preserveAspectRatio="xMinYMin meet" viewBox="0 0 230 230">
+								<clipPath id="clip1">
+									<path fill="#FFFFFF" d="M218.5,112.667C218.5,123.333,126.666,215,116.166,215S13.832,126,13.832,112.667 s87.5-102.333,102.333-102.333S218.5,102,218.5,112.667z"/>
+								</clipPath>
+								<image x="0"  y="0" style="" width="230" height="230" xlink:href="assets/img/avatar/avatar200.png" clip-path="url(#clip1)" />
+							</svg>
+						</div>
+						<div class="name">
+							<p>John Smith</p>
+							<small>User is offline</small>
+						</div>
+						<div class="status"><span></span></div>
+					</a>
+				</li>
+				<li>
+					<a href="" ng-click="enter($event)">
+						<div class="avatar">
+							<svg preserveAspectRatio="xMinYMin meet" viewBox="0 0 230 230">
+								<clipPath id="clip1">
+									<path fill="#FFFFFF" d="M218.5,112.667C218.5,123.333,126.666,215,116.166,215S13.832,126,13.832,112.667 s87.5-102.333,102.333-102.333S218.5,102,218.5,112.667z"/>
+								</clipPath>
+								<image x="0"  y="0" style="" width="230" height="230" xlink:href="assets/img/avatar/avatar200.png" clip-path="url(#clip1)" />
+							</svg>
+						</div>
+						<div class="name">
+							<p>John Smith</p>
+							<small>User is offline</small>
+						</div>
+						<div class="status"><span></span></div>
+					</a>
+				</li>
+				<li>
+					<a href="" ng-click="enter($event)">
+						<div class="avatar">
+							<svg preserveAspectRatio="xMinYMin meet" viewBox="0 0 230 230">
+								<clipPath id="clip1">
+									<path fill="#FFFFFF" d="M218.5,112.667C218.5,123.333,126.666,215,116.166,215S13.832,126,13.832,112.667 s87.5-102.333,102.333-102.333S218.5,102,218.5,112.667z"/>
+								</clipPath>
+								<image x="0"  y="0" style="" width="230" height="230" xlink:href="assets/img/avatar/avatar200.png" clip-path="url(#clip1)" />
+							</svg>
+						</div>
+						<div class="name">
+							<p>John Smith</p>
+							<small>User is offline</small>
+						</div>
+						<div class="status"><span></span></div>
+					</a>
+				</li>
+				<li>
+					<a href="" ng-click="enter($event)">
+						<div class="avatar">
+							<svg preserveAspectRatio="xMinYMin meet" viewBox="0 0 230 230">
+								<clipPath id="clip1">
+									<path fill="#FFFFFF" d="M218.5,112.667C218.5,123.333,126.666,215,116.166,215S13.832,126,13.832,112.667 s87.5-102.333,102.333-102.333S218.5,102,218.5,112.667z"/>
+								</clipPath>
+								<image x="0"  y="0" style="" width="230" height="230" xlink:href="assets/img/avatar/avatar200.png" clip-path="url(#clip1)" />
+							</svg>
+						</div>
+						<div class="name">
+							<p>John Smith</p>
+							<small>User is offline</small>
+						</div>
+						<div class="status"><span></span></div>
+					</a>
+				</li>
+				<li>
+					<a href="" ng-click="enter($event)">
+						<div class="avatar">
+							<svg preserveAspectRatio="xMinYMin meet" viewBox="0 0 230 230">
+								<clipPath id="clip1">
+									<path fill="#FFFFFF" d="M218.5,112.667C218.5,123.333,126.666,215,116.166,215S13.832,126,13.832,112.667 s87.5-102.333,102.333-102.333S218.5,102,218.5,112.667z"/>
+								</clipPath>
+								<image x="0"  y="0" style="" width="230" height="230" xlink:href="assets/img/avatar/avatar200.png" clip-path="url(#clip1)" />
+							</svg>
+						</div>
+						<div class="name">
+							<p>John Smith</p>
+							<small>User is offline</small>
+						</div>
+						<div class="status"><span></span></div>
+					</a>
+				</li>
+				<li>
+					<a href="" ng-click="enter($event)">
+						<div class="avatar">
+							<svg preserveAspectRatio="xMinYMin meet" viewBox="0 0 230 230">
+								<clipPath id="clip1">
+									<path fill="#FFFFFF" d="M218.5,112.667C218.5,123.333,126.666,215,116.166,215S13.832,126,13.832,112.667 s87.5-102.333,102.333-102.333S218.5,102,218.5,112.667z"/>
+								</clipPath>
+								<image x="0"  y="0" style="" width="230" height="230" xlink:href="assets/img/avatar/avatar200.png" clip-path="url(#clip1)" />
+							</svg>
+						</div>
+						<div class="name">
+							<p>John Smith</p>
+							<small>User is offline</small>
+						</div>
+						<div class="status"><span></span></div>
+					</a>
+				</li>
+				<li>
+					<a href="" ng-click="enter($event)">
+						<div class="avatar">
+							<svg preserveAspectRatio="xMinYMin meet" viewBox="0 0 230 230">
+								<clipPath id="clip1">
+									<path fill="#FFFFFF" d="M218.5,112.667C218.5,123.333,126.666,215,116.166,215S13.832,126,13.832,112.667 s87.5-102.333,102.333-102.333S218.5,102,218.5,112.667z"/>
+								</clipPath>
+								<image x="0"  y="0" style="" width="230" height="230" xlink:href="assets/img/avatar/avatar200.png" clip-path="url(#clip1)" />
+							</svg>
+						</div>
+						<div class="name">
+							<p>John Smith</p>
+							<small>User is offline</small>
+						</div>
+						<div class="status"><span></span></div>
+					</a>
+				</li>
+				<li>
+					<a href="" ng-click="enter($event)">
+						<div class="avatar">
+							<svg preserveAspectRatio="xMinYMin meet" viewBox="0 0 230 230">
+								<clipPath id="clip1">
+									<path fill="#FFFFFF" d="M218.5,112.667C218.5,123.333,126.666,215,116.166,215S13.832,126,13.832,112.667 s87.5-102.333,102.333-102.333S218.5,102,218.5,112.667z"/>
+								</clipPath>
+								<image x="0"  y="0" style="" width="230" height="230" xlink:href="assets/img/avatar/avatar200.png" clip-path="url(#clip1)" />
+							</svg>
+						</div>
+						<div class="name">
+							<p>John Smith</p>
+							<small>User is offline</small>
+						</div>
+						<div class="status"><span></span></div>
+					</a>
+				</li>
+				<li>
+					<a href="" ng-click="enter($event)">
+						<div class="avatar">
+							<svg preserveAspectRatio="xMinYMin meet" viewBox="0 0 230 230">
+								<clipPath id="clip1">
+									<path fill="#FFFFFF" d="M218.5,112.667C218.5,123.333,126.666,215,116.166,215S13.832,126,13.832,112.667 s87.5-102.333,102.333-102.333S218.5,102,218.5,112.667z"/>
+								</clipPath>
+								<image x="0"  y="0" style="" width="230" height="230" xlink:href="assets/img/avatar/avatar200.png" clip-path="url(#clip1)" />
+							</svg>
+						</div>
+						<div class="name">
+							<p>John Smith</p>
+							<small>User is offline</small>
+						</div>
+						<div class="status"><span></span></div>
+					</a>
+				</li>
+				<li>
+					<a href="" ng-click="enter($event)">
+						<div class="avatar">
+							<svg preserveAspectRatio="xMinYMin meet" viewBox="0 0 230 230">
+								<clipPath id="clip1">
+									<path fill="#FFFFFF" d="M218.5,112.667C218.5,123.333,126.666,215,116.166,215S13.832,126,13.832,112.667 s87.5-102.333,102.333-102.333S218.5,102,218.5,112.667z"/>
+								</clipPath>
+								<image x="0"  y="0" style="" width="230" height="230" xlink:href="assets/img/avatar/avatar200.png" clip-path="url(#clip1)" />
+							</svg>
+						</div>
+						<div class="name">
+							<p>John Smith</p>
+							<small>User is offline</small>
+						</div>
+						<div class="status"><span></span></div>
+					</a>
+				</li>
+			</ul>
+		</div>
+
+		<div class="conversation">
+			<div class="conversation-wrapper" mb-scrollbar="scrollbarConfigInner">
+
+				<button class="btn btn-link close" ui-chat-toggle><span class="fa fa-times fa-lg text-info"></span></button>
+				<button class="btn btn-link back" ng-click="back($event)"><span class="fa fa-reply fa-lg text-info"></span></button>
+				
+				<svg x="0px" y="0px" viewBox="0 0 250 180">
+					<defs>
+						<mask id="mask_bg" x="0" y="0" with="250px" height="160px">
+							<path fill="#fff" d="M0,0 L250,0 L 250,140 C 165 130 55 130 0 140 Z"/>
+						</mask>
+						<mask id="mask_avatar" x="0" y="0" width="250" height="250" maskUnits="userSpaceOnUse">
+							<path fill="#FFFFFF" d="M218.5,112.667C218.5,123.333,126.666,215,116.166,215S13.832,126,13.832,112.667 s87.5-102.333,102.333-102.333S218.5,102,218.5,112.667z"/>
+						</mask>
+						<filter id="blur">
+							<feGaussianBlur stdDeviation="2"/>
+						</filter>
+					</defs>	
+					<g style="filter:url(#blur);mask:url(#mask_bg);">
+						<image x="0" y="-40px" width="250px" height="250px" xlink:href="assets/img/avatar/avatar200.png" />
+					</g>
+					<g transform="translate(90,50)">
+						<image x="0"  y="0" transform="scale(0.6)" style="fill:#F4F2FB;mask:url(#mask_avatar)" width="230" height="230" xlink:href="assets/img/avatar/avatar200.png" />
+					</g>
+					<g transform="translate(50,85)">
+						<image x="0"  y="0" transform="scale(0.3)" style="fill:#F4F2FB;mask:url(#mask_avatar)" width="230" height="230" xlink:href="assets/img/avatar/avatar200.png" />
+					</g>
+				</svg>
+
+				<h4 class="chat-owner text-center">John Smith</h4>
+				<small class="chat-owner-status text-center">Conversation</small>
+
+				<ul class="conversation-list">
+					<li class="recipient">
+						<div class="avatar">
+							<svg preserveAspectRatio="xMinYMin meet" viewBox="0 0 230 230">
+								<clipPath id="clip1">
+									<path fill="#FFFFFF" d="M218.5,112.667C218.5,123.333,126.666,215,116.166,215S13.832,126,13.832,112.667 s87.5-102.333,102.333-102.333S218.5,102,218.5,112.667z"/>
+								</clipPath>
+								<image x="0"  y="0" style="" width="230" height="230" xlink:href="assets/img/avatar/avatar200.png" clip-path="url(#clip1)" />
+							</svg>
+							<span class="time">3 min ago</span>
+						</div>
+						<div class="message">
+							<span>Hi John!</span>
+						</div>
+					</li>
+					<li class="owner">
+						<div class="message">
+							<span>Hello :) What's up?</span>
+						</div>
+						<div class="avatar">
+							<svg preserveAspectRatio="xMinYMin meet" viewBox="0 0 230 230">
+								<clipPath id="clip1">
+									<path fill="#FFFFFF" d="M218.5,112.667C218.5,123.333,126.666,215,116.166,215S13.832,126,13.832,112.667 s87.5-102.333,102.333-102.333S218.5,102,218.5,112.667z"/>
+								</clipPath>
+								<image x="0"  y="0" style="" width="230" height="230" xlink:href="assets/img/avatar/avatar200.png" clip-path="url(#clip1)" />
+							</svg>
+							<span class="time">5 min ago</span>
+						</div>
+					</li>
+					<li class="recipient">
+						<div class="avatar">
+							<svg preserveAspectRatio="xMinYMin meet" viewBox="0 0 230 230">
+								<clipPath id="clip1">
+									<path fill="#FFFFFF" d="M218.5,112.667C218.5,123.333,126.666,215,116.166,215S13.832,126,13.832,112.667 s87.5-102.333,102.333-102.333S218.5,102,218.5,112.667z"/>
+								</clipPath>
+								<image x="0"  y="0" style="" width="230" height="230" xlink:href="assets/img/avatar/avatar200.png" clip-path="url(#clip1)" />
+							</svg>
+							<span class="time">12:20</span>
+						</div>
+						<div class="message">
+							<span>Testing these new awesome chat layout</span>
+						</div>
+					</li>
+					<li class="owner">
+						<div class="message">
+							<span>Nice! Great job guys!</span>
+						</div>
+						<div class="avatar">
+							<svg preserveAspectRatio="xMinYMin meet" viewBox="0 0 230 230">
+								<clipPath id="clip1">
+									<path fill="#FFFFFF" d="M218.5,112.667C218.5,123.333,126.666,215,116.166,215S13.832,126,13.832,112.667 s87.5-102.333,102.333-102.333S218.5,102,218.5,112.667z"/>
+								</clipPath>
+								<image x="0"  y="0" style="" width="230" height="230" xlink:href="assets/img/avatar/avatar200.png" clip-path="url(#clip1)" />
+							</svg>
+							<span class="time">12:12</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="message-input">
+				<input type="text" placeholder="Enter message ...">
+				<span class="fa fa-level-up fa-rotate-270 fa-fw fa-lg"></span>
+			</div>
+		</div>
+	</div>
+</aside>

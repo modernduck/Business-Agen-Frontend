@@ -1,0 +1,112 @@
+<div id="page-heading">
+	<h3 class="page-title">Create new Employee</h3>
+</div>
+
+	<article class="panel panel-success">
+		<header class="panel-heading">
+			Basic Information
+			<div class="panel-options">
+				
+				<a href="" data-toggle="minimize">
+					<i class="fa fa-minus"></i>
+					<i class="fa fa-plus"></i>
+				</a>
+				<a href="" data-toggle="close"><i class="fa fa-remove"></i></a>
+			</div>
+		</header>
+		<section class="panel-body form-horizontal">
+			
+			<form>
+				<div class="form-group" >
+					<label class="col-lg-3 col-md-12 col-sm-3 control-label hidden-md">Name</label>
+					<div class="col-lg-9 col-md-12 col-sm-9">
+						<input type="text" ng-model="user.name" class="form-control" placeholder="Enter employee's name"> 
+					</div>
+				</div>
+				
+				
+				<div class="form-group" >
+					<label class="col-lg-3 col-md-12 col-sm-3 control-label hidden-md">Lastname</label>
+					<div class="col-lg-9 col-md-12 col-sm-9">
+						<textarea class="form-control"  ng-model="user.lastname" placeholder="Enter employee's description"> </textarea>
+					</div>
+				</div>
+			</form>
+				
+			
+		</section>
+
+			
+		
+	</article>	
+	<section class="panel panel-primary">
+		<header class="panel-heading">
+			Contact
+			<div class="panel-options">
+				
+				<a href="" data-toggle="minimize">
+					<i class="fa fa-minus"></i>
+					<i class="fa fa-plus"></i>
+				</a>
+				<a href="" data-toggle="close"><i class="fa fa-remove"></i></a>
+			</div>
+		</header>
+		<section class="panel-body form-horizontal">
+			<div class="form-group" >
+				<label class="col-lg-3 col-md-12 col-sm-3 control-label hidden-md">Phone</label>
+				<div class="col-lg-9 col-md-12 col-sm-9">
+					<input type="text"  ng-model="user.phone" class="form-control" placeholder="Enter employee's address"> 
+				</div>
+			</div>
+			<div class="form-group" >
+				<label class="col-lg-3 col-md-12 col-sm-3 control-label hidden-md">Email</label>
+				<div class="col-lg-9 col-md-12 col-sm-9">
+					<input type="email"  ng-model="user.email" class="form-control" placeholder="Enter employee's email"> 
+				</div>
+			</div>
+			<div class="form-group" >
+				<label class="col-lg-3 col-md-12 col-sm-3 control-label hidden-md">Address</label>
+				<div class="col-lg-9 col-md-12 col-sm-9">
+					<textarea ng-model="user.address" class="form-control"></textarea>
+				</div>
+			</div>
+			
+		</section>
+	</section>	
+	
+	<article class="panel panel-success">
+		<header class="panel-heading">
+			Account
+			<div class="panel-options">
+				
+				<a href="" data-toggle="minimize">
+					<i class="fa fa-minus"></i>
+					<i class="fa fa-plus"></i>
+				</a>
+				<a href="" data-toggle="close"><i class="fa fa-remove"></i></a>
+			</div>
+		</header>
+		<section class="panel-body form-horizontal">
+			<div class="form-group" >
+				<label class="col-lg-3 col-md-12 col-sm-3 control-label hidden-md">Username</label>
+				<div class="col-lg-9 col-md-12 col-sm-9">
+					<input type="text"  ng-model="user.username" class="form-control" placeholder="Enter employee's address"> 
+				</div>
+			</div>
+			<div class="form-group" >
+				<label class="col-lg-3 col-md-12 col-sm-3 control-label hidden-md">Password</label>
+				<div class="col-lg-9 col-md-12 col-sm-9">
+					<input type="password"  ng-model="user.password" class="form-control" placeholder="Enter employee's email"> 
+				</div>
+			</div>
+			<div class="form-group" >
+				<label class="col-lg-3 col-md-12 col-sm-3 control-label hidden-md">Re - password</label>
+				<div class="col-lg-9 col-md-12 col-sm-9">
+					<input type="password"  ng-model="user.repassword" class="form-control" placeholder="Re enter employee's password"> 
+				</div>
+			</div>
+			
+			
+		</section>
+	</article>
+	

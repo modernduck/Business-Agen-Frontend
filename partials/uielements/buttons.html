@@ -1,0 +1,488 @@
+<div id="page-heading">
+	<h3 class="page-title">Buttons</h3>
+</div>
+
+<section class="container-fluid">
+
+	<article class="panel panel-info">
+		<header class="panel-heading">
+			Button generator
+			<div class="panel-options pull-right">
+				<a href="" data-toggle="refresh"><i class="fa fa-refresh"></i></a>
+				<a href="" data-toggle="minimize">
+					<i class="fa fa-minus"></i>
+					<i class="fa fa-plus"></i>
+				</a>
+				<a href="" data-toggle="close"><i class="fa fa-remove"></i></a>
+			</div>
+		</header>
+		<section class="panel-body">
+			<div class="row">
+				<div class="col-xlg-2 col-lg-2 col-md-2 col-sm-6">
+					<h6>Button size</h6>
+					<select ng-model="button_generator_demo.button_size" class="form-control">
+						<option value="btn-lg" selected>Large</option>
+						<option value="">Medium</option>
+						<option value="btn-sm">Small</option>
+						<option value="btn-xs">Xsmall</option>
+					</select>
+				</div>
+
+				<div class="col-lg-2 col-md-2 col-sm-6">
+					<h6>Button type</h6>
+					<select ng-model="button_generator_demo.button_type" class="form-control">
+						<option value="btn-default">Default</option>
+						<option value="btn-primary">Primary</option>
+						<option value="btn-success">Success</option>
+						<option value="btn-info">Info</option>
+						<option value="btn-danger">Danger</option>
+						<option value="btn-warning">Warning</option>
+						<option value="btn-blocked">Blocked</option>
+						<option value="btn-link">Link</option>
+					</select>
+				</div>
+
+				<div class="col-xlg-1 col-lg-2 col-md-2 col-sm-6">
+					<h6>Disabled?</h6>
+					<select ng-model="button_generator_demo.button_disable" class="form-control">
+						<option value="" selected>Enabled</option>
+						<option value="disabled">Disabled</option>
+					</select>
+				</div>
+
+				<div class="col-xlg-2 col-lg-2 col-md-2 col-sm-6">
+					<h6>Button full width</h6>
+					<select ng-model="button_generator_demo.button_full" class="form-control">
+						<option value="btn-block">Yes</option>
+						<option value="">No</option>
+					</select>
+				</div>
+
+				<div class="col-xlg-2 col-lg-2 col-md-2 col-sm-6">
+					<h6>Button with icon</h6>
+					<select ng-model="button_generator_demo.button_with_icon" class="form-control">
+						<option value="icon">Yes</option>
+						<option value="">No</option>
+						<option value="icon-standalone">Side button</option>
+					</select>
+				</div>
+
+				<div class="col-xlg-1 col-lg-2 col-md-2 col-sm-6">
+					<h6>Button with text</h6>
+					<select ng-model="button_generator_demo.button_text" class="form-control">
+						<option value="Sample button text">Yes</option>
+						<option value="">No</option>
+					</select>
+				</div>
+
+				<div class="col-xlg-2 col-lg-2 col-md-2 col-sm-6">
+					<h6>Button dropdown</h6>
+					<select ng-model="button_generator_demo.dropdown" class="form-control">
+						<option value="">No</option>
+						<option value="simple">Simple</option>
+						<option value="splited">Splitted</option>
+					</select>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 text-center" style="text-align:center;margin:60px 0;">
+					<button type="button" ng-if="!button_generator_demo.dropdown" class="btn
+						{{button_generator_demo.button_size}} 
+						{{button_generator_demo.button_type}} 
+						{{button_generator_demo.button_full}} 
+						{{button_generator_demo.button_with_icon}}" ng-disabled="button_generator_demo.button_disable">
+							<i ng-if="button_generator_demo.button_with_icon" class="fa fa-user"></i>
+							<span ng-if="button_generator_demo.button_text">{{ button_generator_demo.button_text }}</span>
+							</button>
+					<div class="btn-group" ng-if="button_generator_demo.dropdown">
+						<button type="button" class="btn 
+						{{button_generator_demo.button_size}} 
+						{{button_generator_demo.button_type}} 
+						{{button_generator_demo.button_full}} 
+						{{button_generator_demo.button_with_icon}} 
+						" ng-class="{ 'dropdown-toggle': button_generator_demo.dropdown == 'simple' }" data-toggle="dropdown" ng-disabled="button_generator_demo.button_disable">
+							<i ng-if="button_generator_demo.button_with_icon" class="fa fa-user"></i>
+							<span ng-if="button_generator_demo.button_text">{{ button_generator_demo.button_text }}</span>
+							<span class="caret" ng-if="button_generator_demo.dropdown!='splited'"></span>
+							</button>
+						<button type="button" class="btn {{button_generator_demo.button_type}} dropdown-toggle {{button_generator_demo.button_size}}" data-toggle="dropdown" ng-if="button_generator_demo.dropdown=='splited'">
+							<span class="caret"></span>
+						</button>
+						<ul role="menu" class="dropdown-menu">
+							<li><a href="">Link #1</a></li>
+							<li><a href="">Link #2</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+	</article>
+	
+	<div class="row">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<article class="panel panel-default">
+				<header class="panel-heading">Basic buttons</header>
+				<section class="panel-body">
+					<button type="button" class="btn btn-default">Default</button>
+					<button type="button" class="btn btn-primary">Primary</button>
+					<button type="button" class="btn btn-success">Success</button>
+					<button type="button" class="btn btn-info">Info</button>					
+					<button type="button" class="btn btn-warning">Warning</button>
+					<button type="button" class="btn btn-danger">Danger</button>
+					<button type="button" class="btn btn-blocked">Blocked</button>
+					<button type="button" class="btn btn-link">Link</button>
+				</section>
+			</article>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<article class="panel panel-default">
+				<header class="panel-heading">Disabled buttons</header>
+				<section class="panel-body">
+					<button type="button" disabled class="btn btn-default">Default</button>
+					<button type="button" disabled class="btn btn-primary">Primary</button>
+					<button type="button" disabled class="btn btn-success">Success</button>
+					<button type="button" disabled class="btn btn-info">Info</button>					
+					<button type="button" disabled class="btn btn-warning">Warning</button>
+					<button type="button" disabled class="btn btn-danger">Danger</button>
+					<button type="button" disabled class="btn btn-blocked">Blocked</button>
+					<button type="button" disabled class="btn btn-link">Link</button>
+				</section>
+			</article>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-3 col-md-6 col-sm-6">
+			<article class="panel panel-default">
+				<header class="panel-heading">Flat buttons</header>
+				<section class="panel-body">
+					<button type="button" class="btn btn-flat btn-primary">Primary</button>
+					<button type="button" class="btn btn-flat btn-info">Info</button>
+					<button type="button" class="btn btn-flat btn-warning">Warning</button>
+				</section>
+			</article>
+		</div>
+		<div class="col-lg-3 col-md-6 col-sm-6">
+			<article class="panel panel-default">
+				<header class="panel-heading">Buttons with icons</header>
+				<section class="panel-body">
+					<button type="button" class="btn btn-default"><span class="fa fa-user fa-fw"></span> Default</button>
+					<button type="button" class="btn btn-primary"><span class="fa fa-cog fa-fw"></span> Primary</button>
+				</section>
+			</article>
+		</div>
+		<div class="col-lg-6 col-md-12 col-sm-12">
+			<article class="panel panel-default">
+				<header class="panel-heading">Button sizes</header>
+				<section class="panel-body">
+					<button type="button" class="btn btn-default btn-lg">Button large</button>
+					<button type="button" class="btn btn-default">Button default</button>
+					<button type="button" class="btn btn-default btn-sm">Default medium</button>
+					<button type="button" class="btn btn-default btn-xs">Button medium</button>
+				</section>
+			</article>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-lg-4 col-md-6 col-sm-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">Select box</div>
+				<div class="panel-body">
+					<button type="button" placeholder="Choose multiple" class="btn btn-info" ng-model="selectedIcon4" ng-options="icon.value as icon.label for icon in selectDemo" bs-select data-multiple="1">Action <span class="caret"></span>
+					</button>
+					<button type="button" placeholder="Choose multiple" class="btn btn-warning" ng-model="selectedIcon5" ng-options="icon.value as icon.label for icon in selectDemo" bs-select data-multiple="1">Action <span class="caret"></span>
+					</button>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-4 col-md-6 col-sm-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">Full width buttons</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-lg-6 col-md-6 col-sm-6">
+							<button type="button" class="btn btn-default btn-block">Default</button>
+						</div>
+						<div class="col-lg-6 col-md-6 col-sm-6">	
+							<button type="button" class="btn btn-success btn-block">Success</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-4 col-md-12 col-sm-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">Buttons icon side</div>
+				<div class="panel-body">
+					<button type="button" class="btn btn-default icon-standalone">
+						<i class="fa fa-user"></i> <span>Default</span></button>
+					<button type="button" class="btn btn-primary icon-standalone">
+						<i class="fa fa-group"></i> <span>Primary</span></button>
+					<button type="button" class="btn btn-success icon-standalone">
+						<i class="fa fa-lock"></i> <span>Success</span></button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xlg-6 col-lg-6 col-md-6 col-sm-12">
+			<article class="panel panel-default">
+				<header class="panel-heading">Dropdown buttons</header>
+				<section class="panel-body">
+					<div class="btn-group">
+						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Default <span class="caret"></span></button>
+						<ul role="menu" class="dropdown-menu">
+							<li><a href="">Link #1</a></li>
+							<li><a href="">Link #2</a></li>
+						</ul>
+					</div>
+					<div class="btn-group">
+						<button type="button" disabled class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Primary <span class="caret"></span></button>
+						<ul role="menu" class="dropdown-menu">
+							<li><a href="">Link #1</a></li>
+							<li><a href="">Link #2</a></li>
+						</ul>
+					</div>
+					<div class="btn-group">
+						<button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">Success</button>
+						<ul role="menu" class="dropdown-menu">
+							<li><a href="">Link #1</a></li>
+							<li><a href="">Link #2</a></li>
+						</ul>
+					</div>
+					<div class="btn-group">
+						<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown"><span class="fa fa-plus"></span> Info</button>
+						<ul role="menu" class="dropdown-menu">
+							<li><a href=""><i class="icon-outline-mail"></i> Lock this option</a></li>
+							<li><a href=""><i class="icon-outline-heart"></i> Notify me about</a></li>
+							<li class="divider"></li>
+							<li><a href=""><i class="icon-outline-star"></i> Settings</a></li>
+						</ul>
+					</div>
+					<div class="btn-group">
+						<button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown"><span class="fa fa-retweet"></span> Danger <span class="caret"></span></button>
+						<ul role="menu" class="dropdown-menu">
+							<li><a href="">Link #1</a></li>
+							<li><a href="">Link #2</a></li>
+						</ul>
+					</div>
+				</section>
+			</article>
+		</div>
+		<div class="col-xlg-6 col-lg-6 col-md-6 col-sm-12">
+			<article class="panel panel-default">
+				<header class="panel-heading">Dropdown split buttons</header>
+				<section class="panel-body">
+					
+					<div class="btn-group">
+						<button type="button" class="btn btn-default">Default</button>
+						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+							<span class="caret"></span>
+						</button>
+						<ul role="menu" class="dropdown-menu">
+							<li><a href="">Link #1</a></li>
+							<li><a href="">Link #2</a></li>
+						</ul>
+					</div>
+
+					<div class="btn-group">
+						<button type="button" disabled class="btn btn-primary">Primary</button>
+						<button type="button" disabled class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+							<span class="caret"></span>
+						</button>
+						<ul role="menu" class="dropdown-menu">
+							<li><a href="">Link #1</a></li>
+							<li><a href="">Link #2</a></li>
+						</ul>
+					</div>
+					<div class="btn-group">
+						<button type="button" class="btn btn-success">Success</button>
+						<button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+							<span class="caret"></span>
+						</button>
+						<ul role="menu" class="dropdown-menu">
+							<li><a href="">Link to choice 1</a></li>
+							<li><a href="">Link to choice 2</a></li>
+							<li><a href="">Link to choice 3</a></li>
+							<li><a href="">Link to choice 4</a></li>
+							<li class="divider"></li>
+							<li><a href="">Link to choice 5</a></li>
+							<li><a href="">Link to choice 6</a></li>
+						</ul>
+					</div>
+					<div class="btn-group">
+						<button type="button" class="btn btn-info"><span class="fa fa-user"></span> Info</button>
+						<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+							Action
+						</button>
+						<ul role="menu" class="dropdown-menu">
+							<li><a href="">Link to choice 1</a></li>
+							<li><a href="">Link to choice 2</a></li>
+							<li><a href="">Link to choice 3</a></li>
+							<li><a href="">Link to choice 4</a></li>
+							<li class="divider"></li>
+							<li><a href="">Link to choice 5</a></li>
+							<li><a href="">Link to choice 6</a></li>
+						</ul>
+					</div>
+					<div class="btn-group">
+						<button type="button" class="btn btn-danger">Danger</button>
+						<button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
+							<span class="fa fa-retweet"></span>
+						</button>
+						<ul role="menu" class="dropdown-menu">
+							<li><a href="">Link to choice 1</a></li>
+							<li><a href="">Link to choice 2</a></li>
+							<li><a href="">Link to choice 3</a></li>
+							<li><a href="">Link to choice 4</a></li>
+							<li class="divider"></li>
+							<li><a href="">Link to choice 5</a></li>
+							<li><a href="">Link to choice 6</a></li>
+						</ul>
+					</div>
+				</section>
+			</article>
+			
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-12 col-md-12 col-sm-12">
+			<article class="panel panel-default">
+				<header class="panel-heading">Loading buttons</header>
+				<section class="panel-body">
+					<div class="form-group">
+						<button type="button" class="btn btn-default" data-loading-text="Loading..." data-time="5">Fire me for 5s</button>
+						<button type="button" class="btn btn-primary" data-loading-text="Loading..." data-time="10">Fire me for 10s</button>
+						<button type="button" class="btn btn-success" data-loading-text="Loading..." data-time="8">Fire me for 8s</button>
+						<button type="button" class="btn btn-info" data-loading-text="Loading...">Fire me for 30s</button>
+						<button type="button" class="btn btn-danger" data-loading-text="Loading...">Fire me for 30s</button>
+						<button type="button" class="btn btn-warning" data-loading-text="Loading...">Fire me for 30s</button>
+					</div>
+				</section>
+			</article>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xlg-5 col-lg-6 col-md-6 col-sm-12">
+			<article class="panel panel-default">
+				<header class="panel-heading">Button groups</header>
+				<section class="panel-body">
+					<div class="form-group">
+						<div class="btn-group">
+							<button type="button" class="btn btn-default">Link #1</button>
+							<button type="button" class="btn btn-default">Link #2</button>
+							<button type="button" class="btn btn-default">Link #3</button>
+							<button type="button" class="btn btn-default">Link #4</button>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="btn-group">
+							<button class="btn btn-default">Previous</button>
+							<button type="button" class="btn btn-default">1</button>
+							<button type="button" class="btn btn-default">2</button>
+							<button type="button" class="btn btn-default">3</button>
+							<button type="button" class="btn btn-default">4</button>
+							<button type="button" class="btn btn-default">5</button>
+							<button type="button" class="btn btn-default">6</button>
+							<button type="button" class="btn btn-default">7</button>
+							<button type="button" class="btn btn-default">8</button>
+							<button type="button" class="btn btn-default">9</button>
+							<button class="btn btn-default">Next</button>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="btn-group">
+							<button type="button" class="btn btn-default"><i class="fa fa-cog"></i> Settings</button>
+							<button type="button" class="btn btn-default"><i class="fa fa-cc"></i> Payment</button>
+							<button type="button" class="btn btn-default"><i class="fa fa-code"></i> Code</button>
+							<button type="button" class="btn btn-default"><i class="fa fa-clock-o"></i> Clock</button>
+							<div class="btn-group">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+									<i class="fa fa-cloud-download"></i> Dropdown <span class="caret"></span>
+								</button>
+								<ul role="menu" class="dropdown-menu">
+									<li><a href=""><i class="fa fa-lock"></i> Lock this option</a></li>
+									<li><a href=""><i class="fa fa-mail-forward"></i> Notify me about</a></li>
+									<li class="divider"></li>
+									<li><a href=""><i class="fa fa-cog"></i> Settings</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</section>
+			</article>
+		</div>
+		<div class="col-xlg-2 col-lg-6 col-md-6 col-sm-12">
+			<article class="panel panel-default">
+				<header class="panel-heading">Button groups vertical</header>
+				<section class="panel-body">
+					<div class="btn-group-vertical">
+						<button type="button" class="btn btn-default"><i class="fa fa-cog"></i> Settings</button>
+						<button type="button" class="btn btn-default"><i class="fa fa-cc"></i> Payment</button>
+						<button type="button" class="btn btn-default"><i class="fa fa-code"></i> Code</button>
+						<button type="button" class="btn btn-default"><i class="fa fa-clock-o"></i> Clock</button>
+						<div class="btn-group">
+							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+								<i class="fa fa-cloud-download"></i> Dropdown <span class="caret"></span>
+							</button>
+							<ul role="menu" class="dropdown-menu">
+								<li><a href=""><i class="fa fa-lock"></i> Lock this option</a></li>
+								<li><a href=""><i class="fa fa-mail-forward"></i> Notify me about</a></li>
+								<li class="divider"></li>
+								<li><a href=""><i class="fa fa-cog"></i> Settings</a></li>
+							</ul>
+						</div>
+					</div>
+				</section>
+			</article>
+		</div>
+		<div class="col-xlg-5 col-lg-12 col-md-12 col-sm-12">
+			<article class="panel panel-default">
+				<header class="panel-heading">Button groups justified</header>
+				<section class="panel-body">
+					<div class="form-group btn-group btn-group-justified">
+						<div class="btn-group">
+							<button type="button" class="btn btn-default"><i class="fa fa-cog"></i> Settings</button>
+						</div>
+						<div class="btn-group">
+							<button type="button" class="btn btn-default"><i class="fa fa-cc"></i> Payment</button>
+						</div>
+						<div class="btn-group">
+							<button type="button" class="btn btn-default"><i class="fa fa-code"></i> Code</button>
+						</div>
+						<div class="btn-group">
+							<button type="button" class="btn btn-default"><i class="fa fa-clock-o"></i> Clock</button>	
+						</div>
+						<div class="btn-group">
+							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+								<i class="fa fa-cloud-download"></i> Dropdown <span class="caret"></span>
+							</button>
+							<ul role="menu" class="dropdown-menu">
+								<li><a href=""><i class="fa fa-lock"></i> Lock this option</a></li>
+								<li><a href=""><i class="fa fa-mail-forward"></i> Notify me about</a></li>
+								<li class="divider"></li>
+								<li><a href=""><i class="fa fa-cog"></i> Settings</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="btn-group btn-group-justified">
+						<div class="btn-group">
+							<button type="button" class="btn btn-default"><i class="fa fa-cc"></i> Payment</button>
+						</div>
+						<div class="btn-group">
+							<button type="button" class="btn btn-default"><i class="fa fa-code"></i> Code</button>
+						</div>
+						<div class="btn-group">
+							<button type="button" class="btn btn-default"><i class="fa fa-clock-o"></i> Clock</button>	
+						</div>
+					</div>
+				</section>
+			</article>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,53 @@
+<div id="page-heading">
+	<h3 class="page-title">Google Maps</h3>
+</div>
+
+<section class="container-fluid">
+	<div class="row">
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">Your Location</div>
+				<div class="panel-body">
+					<ui-gmap-google-map center='currentMap.center' zoom='currentMap.zoom' options="currentMap.options"></ui-gmap-google-map>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">Map weather</div>
+				<div class="panel-body">
+					<ui-gmap-google-map center="weatherMap.center" zoom="weatherMap.zoom" draggable="true" options="weatherMap.options">
+						<ui-gmap-layer namespace="weather" type="WeatherLayer" show="weatherMap.showWeather"></ui-gmap-layer>
+					</ui-gmap-google-map>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">Map with search box</div>
+				<div class="panel-body">
+					<ui-gmap-google-map center="search.center" zoom="search.zoom" draggable="true" options="search.options">
+						<ui-gmap-search-box template="search.template" events="search.events"></ui-gmap-search-box>
+					</ui-gmap-google-map>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">Map with draw options</div>
+				<div class="panel-body">
+					<ui-gmap-google-map center="drawMap.center" zoom="drawMap.zoom" draggable="true" options="drawMap.options" bounds="drawMap.bounds">
+						<ui-gmap-drawing-manager options="drawMap.drawingManagerOptions" control="drawingManagerControl"></ui-gmap-drawing-manager>
+					</ui-gmap-google-map>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/ng-template" id="searchbox.tpl.html">
+        <input type="text" class="form-control input-lg" placeholder="Type location .." style="width:300px;left:50% !important;margin-left:-150px;margin-top:10px;" ng-model="searchLocation">
+    </script>
+</section>

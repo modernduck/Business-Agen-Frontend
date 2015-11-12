@@ -1,0 +1,73 @@
+<aside role="navigation" id="mailaside" mb-scrollbar="scrollbarConfig">
+	<a class="brand" href ui-sref="app.admin.dashboard" title="Debut UI Kit">
+		<img src="assets/img/logo_dashboard.svg" alt="Debut UI Kit" class="large">
+		<img src="assets/img/logo_dashboard_small.svg" alt="Debut UI Kit" class="small">
+	</a>
+
+	<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="220px" height="180px" viewBox="0 0 220 180">
+		<defs>
+			<mask id="mask2" x="0" y="0" with="220px" height="140px">
+				<path fill="#fff" d="M0,0 L220,0 L 220,140 C 165 130 55 130 0 140 Z"/>
+			</mask>
+			<mask id="mask3" x="0" y="0" width="230" height="230" maskUnits="userSpaceOnUse">
+				<path fill="#FFFFFF" d="M218.5,112.667C218.5,123.333,126.666,215,116.166,215S13.832,126,13.832,112.667 s87.5-102.333,102.333-102.333S218.5,102,218.5,112.667z"/>
+			</mask>
+			<filter id="blur">
+				<feGaussianBlur stdDeviation="2"/>
+			</filter>
+		</defs>	
+		<g style="filter:url(#blur);mask:url(#mask2);fill:#F4F2FB;">
+			<image x="0" y="-30px" width="230" height="230" xlink:href="assets/img/avatar/avatar200.png" />
+		</g>
+		<g transform="translate(30,30)">
+			<image x="0"  y="0" transform="scale(0.7)" style="fill:#F4F2FB;mask:url(#mask3)" width="230" height="230" xlink:href="assets/img/avatar/avatar200.png" />
+		</g>
+	</svg>
+
+	<p class="owner-title">John Smith</p>
+
+	<div class="new-mail">
+		<button type="button" class="btn btn-success btn-flat btn-block" ui-sref=".new">
+			<!-- <i class="fa fa-lock fa-lg"></i> -->
+			<span>Create mail</span>
+		</button>
+	</div>
+
+	<nav class="side-bar" ui-side-menu >
+		<ul class="nav-menu">
+			<li data-state="close" ui-sref-active="active">
+				<a href ui-sref=".inbox" class="icon-paper-plane">
+					<span>Inbox</span>
+					<small class="badge pull-right">3</small>
+				</a>
+			</li>
+			<li data-state="close">
+				<a href class="icon-star">
+					<span>Starred</span>
+					<small class="badge pull-right">13</small>
+				</a>
+			</li>
+			<li data-state="close">
+				<a href class="icon-input-right">
+					<span>Sent</span>
+					<small class="badge pull-right">5</small>
+				</a>
+			</li>
+			<li data-state="close">
+				<a href class="icon-edit">
+					<span>Draft</span>
+				</a>
+			</li>
+			<li data-state="close">
+				<a href class="icon-x">
+					<span>Spam</span>
+				</a>
+			</li>
+			<li data-state="close">
+				<a href class="icon-trash">
+					<span>Trash</span>
+				</a>
+			</li>
+		</ul>
+	</nav>
+</aside>

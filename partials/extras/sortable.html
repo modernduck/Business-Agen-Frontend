@@ -1,0 +1,32 @@
+<div id="page-heading">
+	<h3 class="page-title">Components</h3>
+</div>
+
+<section class="container-fluid">
+	<div class="row">
+		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+			<article class="panel panel-default">
+				<header class="panel-heading">Sortable list typ 1</header>
+				<section class="panel-body">
+					<div ui-tree>
+						<ol ui-tree-nodes ng-model="sortablelist">
+							<li ng-repeat="node in sortablelist" ui-tree-node ng-include="'partials/tpl/uitree.html'"></li>
+						</ol>
+					</div>
+				</section>
+			</article>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+			<article class="panel panel-default">
+				<header class="panel-heading">Sortable list typ 2</header>
+				<section class="panel-body">
+					<div ui-tree>
+						<ol ui-tree-nodes ng-model="sortablelist2">
+							<li ng-repeat="node in sortablelist2" ui-tree-node ng-include="'partials/tpl/uitree2.html'"></li>
+						</ol>
+					</div>
+				</section>
+			</article>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,11 @@
+<div class="item {{ node.class }}">
+	<a href ng-click="toggle(this)" ui-tree-handle>
+		<i class="fa fa-unsorted text-muted"></i>
+	</a>
+	<span data-nodrag>{{node.title}}</span>
+
+	<a href class="pull-right" data-nodrag ng-click="remove(this)"><i class="fa fa-times fa-fw text-muted"></i></a>
+</div>
+<ol ui-tree-nodes ng-model="node.nodes" ng-if="node.nodes" ng-hide="collapsed">
+	<li ng-repeat="node in node.nodes" ui-tree-node ng-include="'partials/tpl/uitree.html'"></li>
+</ol>

@@ -1,0 +1,27 @@
+<div class="multiselect">
+	<div class="row">
+		<div class="col-lg-6 col-md-6 col-sm-6">
+			<div class="panel panel-default">
+				<div class="panel-heading">Available items</div>
+				<input type="text" class="form-control input-sm" ng-model="filterIn" placeholder="Filter values">
+				<div class="panel-body" mb-scrollbar="contentScrollbar">
+					<ul class="nav nav-pills nav-stacked">
+						<li ng-repeat="item in data | filter:selected=false | filter:filterIn"><a href ng-dblclick="select($event)" ng-class="{selected: item.selected }">{{ item.name }}</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-6">
+			<div class="panel panel-default">
+				<div class="panel-heading">Picked items</div>
+				<input type="text" class="form-control input-sm" ng-model="filterOut" placeholder="Filter values">
+				<div class="panel-body" mb-scrollbar="contentScrollbar">
+					<ul class="nav nav-pills nav-stacked">
+						<li ng-repeat="item in model | filter:filterOut"><a href ng-dblclick="remove($event)" ng-class="{selected: item.selected }">{{ item.name }}</a></li>
+					</ul>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</div>

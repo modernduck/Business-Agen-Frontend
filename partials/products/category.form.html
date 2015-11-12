@@ -1,0 +1,32 @@
+<div id="page-heading">
+	<h3 class="page-title">Product's Category</h3>
+</div>
+
+	<article class="panel panel-success">
+		<header class="panel-heading">
+			Category
+			
+		</header>
+		<section class="panel-body form-horizontal">
+			<form ng-submit="saveCategory()">
+				<div class="form-group" >
+					<label class="col-lg-3 col-md-12 col-sm-3 control-label hidden-md">Name</label>
+					<div class="col-lg-9 col-md-12 col-sm-9">
+						<input type="text" ng-model="category.name" class="form-control" placeholder="Enter product's category"> 
+					</div>
+				</div>
+				
+				</div>
+			</form>
+				
+			
+		</section>
+		<footer class="panel-footer">
+			<button class="btn btn-default"><span class="fa fa-remove"></span>Cancle</button>
+			<button type="button" ng-click="saveCategory()" class="btn btn-success pull-right"><span class="fa fa-check"></span> Save</button>
+		</footer>
+		
+
+			
+		
+	</article>		

@@ -1,0 +1,138 @@
+<div id="page-heading">
+	<h3 class="page-title">Form wizard</h3>
+</div>
+
+<section class="container-fluid">
+
+	<div class="form-group" ui-form-wizard data-validate="true">
+		<div class="form-group">
+			<div class="form-wizard">
+				<ul class="tabs">
+					<li><button data-step="1">First step</button></li>
+					<li><button data-step="2">Second step</button></li>
+					<li><button data-step="3">Third step</button></li>
+					<li><button data-step="4">Final step</button></li>
+					<li><button data-step="5">First step</button></li>
+					<li><button data-step="6">Second step</button></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="form-group pull-right">
+			<button class="btn btn-success" ng-click="$next()">Next</button>
+			<button class="btn btn-primary" ng-click="$last()">Last</button>
+		</div>
+
+		<div class="form-group">
+			<button class="btn btn-primary" ng-click="$first()">First</button>
+			<button class="btn btn-default" ng-click="$prev()">Prev</button>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-6 col-md-12 col-sm-12">
+			<div class="panel panel-default" ui-form-wizard>
+				<div class="panel-heading">Form wizard with form validation</div>
+				<div class="form-wizard">
+					<ul class="tabs">
+						<li><button data-step="1">First step</button></li>
+						<li><button data-step="2">Second step</button></li>
+						<li><button data-step="3">Third step</button></li>
+						<li><button data-step="4">Final step</button></li>
+					</ul>
+				</div>
+				<div class="panel-body form-vertical">
+					<div class="wizard-pane active">
+						<form name="wizardDemo1" novalidate ng-submit="wizardDemo1.$valid && $next()">
+							<div class="row">		
+								<div class="col-lg-6 col-md-6 col-sm-6">
+									<div class="form-group has-feedback" ng-class="{ 'has-error': wizardDemo1.$submitted && wizardDemo1.firstname.$invalid, 'has-success': wizardDemo1.firstname.$valid }">
+										<label class="control-label">First name</label>
+										<input type="text" name="firstname" ng-model="firstname" class="form-control" placeholder="Enter name" required ng-minlength="5">
+										<span class="fa fa-remove form-control-feedback" ng-show="wizardDemo1.$submitted && wizardDemo1.$invalid"></span>
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-6 col-sm-6">
+									<div class="form-group has-feedback" ng-class="{ 'has-error': wizardDemo1.$submitted && wizardDemo1.lastname.$invalid, 'has-success': wizardDemo1.lastname.$valid }">
+										<label class="control-label">Last name</label>
+										<input type="text" name="lastname" ng-model="lastname" class="form-control" placeholder="Enter last name" required ng-minlength="5">
+										<span class="fa fa-remove form-control-feedback" ng-show="wizardDemo1.$submitted && wizardDemo1.lastname.$invalid"></span>
+									</div>
+								</div>
+							</div>
+							<div class="form-group has-feedback" ng-class="{ 'has-error': wizardDemo1.$submitted && wizardDemo1.fulladdress.$invalid, 'has-success': wizardDemo1.fulladdress.$valid }">
+								<label for="" class="control-label">Full address</label>
+								<input type="text" name="fulladdress" ng-model="fulladdress" class="form-control" placeholder="Enter full address" required ng-minlength="20">
+								<span class="fa fa-remove form-control-feedback" ng-show="wizardDemo1.$submitted && wizardDemo1.fulladdress.$invalid"></span>
+							</div>
+							<div class="form-group has-feedback" ng-class="{ 'has-error': wizardDemo1.$submitted && wizardDemo1.description.$invalid, 'has-success': wizardDemo1.description.$valid }">
+								<label for="" class="control-label">Description</label>
+								<textarea name="description" ng-model="description" cols="30" rows="6" class="form-control" placeholder="Enter description"></textarea>
+								<span class="fa fa-remove form-control-feedback" ng-show="wizardDemo1.$submitted && wizardDemo1.description.$invalid"></span>
+							</div>
+							<div class="row"><hr></div>
+							<button type="button" class="btn btn-default">Prev step</button>
+							<button type="submit" class="btn btn-default pull-right">Next step</button>
+						</form>
+					</div>
+					<div class="wizard-pane">
+						<div class="form-group">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, error, maxime? Necessitatibus quo quam architecto facilis, provident delectus maiores maxime voluptates ipsum harum voluptatibus iste obcaecati, ipsa placeat doloremque molestiae!
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-6 col-md-12 col-sm-12">
+			<div class="panel panel-default" ui-form-wizard>
+				<div class="panel-heading">Form wizard vertical</div>
+				<div class="form-wizard wizard-vertical">
+					<div class="row">
+						<div class="col-lg-3 col-md-3 col-sm-3">
+							<ul class="tabs">
+								<li><button data-step="1">First step</button></li>
+								<li><button data-step="2">Second step</button></li>
+								<li><button data-step="3">Third step</button></li>
+								<li><button data-step="4">Fourth step</button></li>
+							</ul>
+						</div>
+						<div class="col-lg-9 col-md-9 col-sm-9">
+							<div class="panel-body">
+								<div class="wizard-pane">									
+									<div class="form-group">
+										<label for="" class="control-label">First name</label>
+										<input type="text" class="form-control" placeholder="Enter name">
+									</div>
+									<div class="form-group">
+										<label for="" class="control-label">Last name</label>
+										<input type="text" class="form-control" placeholder="Enter last name">
+									</div>
+								</div>
+								<div class="wizard-pane">
+									<div class="form-group">
+										<h4>Header title</h4>
+										Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, error, maxime? Necessitatibus quo quam architecto facilis, provident delectus maiores maxime voluptates ipsum harum voluptatibus iste obcaecati, ipsa placeat doloremque molestiae!
+									</div>
+								</div>
+								<div class="wizard-pane text-center">
+									<h1 class="text-center">Hello world!</h1>
+									<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus eveniet ex, libero, rerum beatae ea perspiciatis veritatis qui recusandae voluptates similique fugit iure laborum quam natus ab, asperiores accusantium inventore.</span>
+								</div>
+								<div class="wizard-pane text-center">
+									<h1 class="text-center">Finished!</h1>
+									<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus eveniet ex, libero, rerum beatae ea perspiciatis veritatis.</span>
+								</div>
+							</div>
+						</div>	
+					</div>
+				</div>
+				<div class="panel-footer clearfix">
+					<button class="btn btn-default" ng-click="$prev($event)">Prev step</button>
+					<button class="btn btn-default pull-right" ng-click="$next($event)">Next step</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</section>

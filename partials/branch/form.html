@@ -1,0 +1,180 @@
+	<div id="page-heading">
+	<h3 class="page-title">Branch</h3>
+</div>
+
+	<article class="panel panel-success">
+		<header class="panel-heading">
+			Basic Information
+			<div class="panel-options">
+				
+				<a href="" data-toggle="minimize">
+					<i class="fa fa-minus"></i>
+					<i class="fa fa-plus"></i>
+				</a>
+				<a href="" data-toggle="close"><i class="fa fa-remove"></i></a>
+			</div>
+		</header>
+		<section class="panel-body form-horizontal">
+			
+			<form>
+				<div class="form-group" >
+					<label class="col-lg-3 col-md-12 col-sm-3 control-label hidden-md">Name</label>
+					<div class="col-lg-9 col-md-12 col-sm-9">
+						<input type="text" ng-model="branch.name" class="form-control" placeholder="Enter branch's name"> 
+					</div>
+				</div>
+				
+				
+				<div class="form-group" >
+					<label class="col-lg-3 col-md-12 col-sm-3 control-label hidden-md">Description</label>
+					<div class="col-lg-9 col-md-12 col-sm-9">
+						<textarea class="form-control"  ng-model="branch.description" placeholder="Enter branch's description"> </textarea>
+					</div>
+				</div>
+			</form>
+				
+			
+		</section>
+
+			
+		
+	</article>	
+	<section class="panel panel-primary">
+		<header class="panel-heading">
+			Address
+			<div class="panel-options">
+				
+				<a href="" data-toggle="minimize">
+					<i class="fa fa-minus"></i>
+					<i class="fa fa-plus"></i>
+				</a>
+				<a href="" data-toggle="close"><i class="fa fa-remove"></i></a>
+			</div>
+		</header>
+		<section class="panel-body form-horizontal">
+			<div class="form-group" >
+				<label class="col-lg-3 col-md-12 col-sm-3 control-label hidden-md">Address</label>
+				<div class="col-lg-9 col-md-12 col-sm-9">
+					<input type="text"  ng-model="branch.address" class="form-control" placeholder="Enter branch's address"> 
+				</div>
+			</div>
+			<div class="form-group" >
+				<label class="col-lg-3 col-md-12 col-sm-3 control-label hidden-md">District</label>
+				<div class="col-lg-9 col-md-12 col-sm-9">
+					<input type="text"  ng-model="branch.district" class="form-control" placeholder="Enter branch's district"> 
+				</div>
+			</div>
+			<div class="form-group" >
+				<label class="col-lg-3 col-md-12 col-sm-3 control-label hidden-md">Province</label>
+				<div class="col-lg-9 col-md-12 col-sm-9">
+					<input type="text"  ng-model="branch.province" class="form-control" placeholder="Enter branch's province"> 
+				</div>
+			</div>
+			<div class="form-group" >
+				<label class="col-lg-3 col-md-12 col-sm-3 control-label hidden-md">Zipcode</label>
+				<div class="col-lg-9 col-md-12 col-sm-9">
+					<input type="text"  ng-model="branch.zipcode" class="form-control" placeholder="Enter branch's zipcode"> 
+				</div>
+			</div>
+		</section>
+	</section>	
+	
+	<article class="panel panel-success" ng-hide="isNew">
+		<header class="panel-heading">
+			Inventory {{isNew}}
+			<div class="panel-options">
+				
+				<a href="" data-toggle="minimize">
+					<i class="fa fa-minus"></i>
+					<i class="fa fa-plus"></i>
+				</a>
+				<a href="" data-toggle="close"><i class="fa fa-remove"></i></a>
+			</div>
+		</header>
+		<section class="panel-body form-horizontal">
+			
+			<table ng-table="tableProduct" class="table ng-table-responsive">
+				<tbody ng-repeat="group in $groups">
+					<tr class="ng-table-group">
+						<td colspan="{{$columns.length}}">
+							<a href="" ng-click="group.$hideRows = !group.$hideRows">
+								<span class="fa" ng-class="{ 'fa-chevron-right': group.$hideRows, 'fa-chevron-down': !group.$hideRows }"></span>
+								<strong>{{ group.value }}</strong>
+							</a>
+						</td>
+					</tr>
+
+					<tr ng-hide="group.$hideRows" ng-repeat="item in group.data">
+						
+						
+						<td data-title="'Name'" sortable="'name'">{{ item.product.name }}</td>
+						
+						<td data-title="'Price'" sortable="'price'">{{ item.product.price | currency:"B " }}</td>
+						<td data-title="'Quantity'" sortable="'price'">{{ item.count | number}}</td>
+						
+						<td data-title="'Options'">
+							<div class="btn-group">
+								<button class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
+								<ul role="menu" class="dropdown-menu">
+									<li><a href="" ng-click="addStock(item.product.id, item.count)">Add Stock</a></li>
+									<li><a href="" ng-click="updateStock(item.product.id, item.count)">Update Stock</a></li>
+									<li><a ng-click="removeStock(item.product.id)">Remove All Stock</a></li>
+									<li><a  href="#/product/update/{{item.product.id}}" >Edit</a></li>
+									
+								</ul>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			
+		</section>
+		<footer class="panel-footer">
+			
+			<button  class="btn btn-success" data-placement="center" bs-modal="modal" data-template="partials/products/modal/product.selector.html">Add Inventory</button>
+		</footer>
+	</article>
+	<article class="panel panel-success"  ng-hide="isNew">
+		<header class="panel-heading">
+			Employee
+			<div class="panel-options">
+				
+				<a href="" data-toggle="minimize">
+					<i class="fa fa-minus"></i>
+					<i class="fa fa-plus"></i>
+				</a>
+				<a href="" data-toggle="close"><i class="fa fa-remove"></i></a>
+			</div>
+		</header>
+		<section class="panel-body form-horizontal">
+			<table ng-table="tableEmployee" class="table ng-table-responsive">
+				<tr ng-repeat="item in $data">
+					<td data-title="'Name'" sortable="'name'">{{ item.name }}</td>
+				<td data-title="'Level'">{{ item.level }}</td>
+
+				<td data-title="'Password'">{{ item.password }}</td>
+				<td data-title="'Options'">
+					<div class="btn-group">
+						<button class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
+						<ul role="menu" class="dropdown-menu">
+							
+							<li><a  href ui-sref="app.admin.employee.update" >Edit</a></li>
+							
+							
+						</ul>
+					</div>
+				</td>
+				</tr>
+			</table>
+		</section>
+		<footer class="panel-footer">
+			
+			<button  class="btn btn-success" data-placement="center" bs-modal="modal" data-template="partials/employee/modal/form.html">Add Employee</button>
+		</footer>
+	</article>
+	<footer class="panel-footer" style="min-height:50px;">
+			<button class="btn btn-default" ng-click="deleteBranch()" ng-hide="isNew"><span class="fa fa-remove" ></span>Remove</button>
+
+			<button type="button" ng-click="saveBranch()" class="btn btn-success pull-right"><span class="fa fa-check"></span> Save</button>
+		</footer>
+

@@ -1,0 +1,37 @@
+<div id="page-heading">
+	<h3 class="page-title">POS</3>
+</div>
+
+<section class="container-fluid">
+	<a  href ui-sref="app.pos.activebill.create" ui-sref-active="active"  type="button" class="btn btn-lg btn-primary icon-standalone">
+		<i class="icon-plus"></i> <span>เปิดบิล</span>
+	</a>
+	<br/><br/>
+
+	<div class="panel panel-info">
+		<div class="panel-heading">
+			Active Bill
+			<div class="panel-options pull-right">
+				<a href="" data-toggle="refresh"><i class="fa fa-refresh"></i></a>
+				<a href="" data-toggle="minimize">
+					<i class="fa fa-minus"></i>
+					<i class="fa fa-plus"></i>
+				</a>
+				<a href="" data-toggle="close"><i class="fa fa-remove"></i></a>
+			</div>
+		</div>
+		<div class="panel-body">
+			<section style="text-align:center;padding-left:20px;">
+				<div style="width:150px;margin-right:20px;display:inline-block;" ng-repeat="item in items">
+					<div class="indicator-alternate widget"  >
+						<div class="widget-heading" ui-sref="app.pos.activebill.update" ui-sref-active="active" >
+							<p class="title">{{item.id}}</p>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+
+	
+</section>

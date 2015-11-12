@@ -1,0 +1,132 @@
+<div id="page-heading">
+	<h3 class="page-title">Invoice 12/12/2014</h3>
+</div>
+
+<section class="container-fluid">
+	<div class="panel panel-default">
+
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container-fluid">
+				<button class="btn btn-default navbar-btn" ui-sref="app.admin.extras.invoice"><i class="fa fa-angle-left"></i> Back</button>
+		
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href ng-click="$print($event, 'invoice 12/12/2014','#print-area')">Print</a></li>
+					<li><a href ui-sref="app.extras.invoice">Delete</a></li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+</section>
+
+<section class="container" id="print-area">
+	<div class="panel">
+		<div class="panel-body">	
+			<div class="form-group">
+				<div class="row">
+					<div class="col-lg-6 col-md-6 col-sm-6">
+						<img src="assets/img/invoice_logo.png" alt="">
+					</div>
+					<div class="col-lg-6 col-md-6 col-sm-6 text-right">
+						<p>Invoice date: 12.12.2014</p>
+						<p>Dispatch date: 19.12.2014</p>
+						<p>Location: New York City, NYC</p>
+					</div>
+				</div>
+			</div>
+			<table class="table table-bordered">
+				<tbody>	
+					<tr>
+						<td width="30%">
+							<h4>Company</h4>
+							<address>
+								<strong>Company Name Ltd</strong><br>
+								3rd Street 123/1 New York City, New York, USA<br>
+								ZIP 123-321<br>
+								NIP 123-123-12-12<br>
+								Phone: (001) 555-555-555<br>
+							</address>
+						</td>
+						<td width="30%">
+							<h2 class="text-center light">Invoice No 123/20A/2014</h2>
+						</td>
+						<td width="30%">
+							<h4>Buyer's Name</h4>
+							<address>
+								<strong>Company Name Ltd</strong><br>
+								3rd Street 123/1 New York City, New York, USA<br>
+								ZIP 123-321<br>
+								NIP 123-123-12-12<br>
+								Phone: (001) 555-555-555<br>
+							</address>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th width="5%">QTY</th>
+						<th width="55%">Description</th>
+						<th width="10%">Piece</th>
+						<th width="10%">Unit price</th>
+						<th width="10%">Tax</th>
+						<th width="10%">Total</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>iPhone 6 32GB LTE Retina</td>
+						<td>1</td>
+						<td>$ 599.00</td>
+						<td>24%</td>
+						<td>$ 700.00</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>iPhone 6 16 GB</td>
+						<td>1</td>
+						<td>$ 499.00</td>
+						<td>24%</td>
+						<td>$ 650.00</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>iPhone 6 16 GB</td>
+						<td>1</td>
+						<td>$ 499.00</td>
+						<td>24%</td>
+						<td>$ 650.00</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>iPhone 6 16 GB</td>
+						<td>1</td>
+						<td>$ 499.00</td>
+						<td>24%</td>
+						<td>$ 650.00</td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="3"></td>
+						<td class="text-right">Subtotal</td>
+						<td colspan="2" class="text-center">
+							<strong>$ 2096.00</strong>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="3"></td>
+						<td class="text-right">Total</td>
+						<td colspan="2" class="text-center">
+							<h3>
+								<strong>$ 2096.00</strong>
+							</h3>
+						</td>
+					</tr>
+				</tfoot>
+			</table>			
+		</div>
+	</div>
+</section>

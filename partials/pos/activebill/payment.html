@@ -1,0 +1,136 @@
+<div id="page-heading">
+	<h3 class="page-title">Active Bill</h3>
+</div>
+<section class="container-fluid">
+	<div class="row">
+		<div class="col-lg-6">
+			<article class="panel panel-primary">
+				<header class="panel-heading">
+					Order
+					<div class="panel-options">
+						
+						<a href="" data-toggle="minimize">
+							<i class="fa fa-minus"></i>
+							<i class="fa fa-plus"></i>
+						</a>
+						<a href="" data-toggle="close"><i class="fa fa-remove"></i></a>
+					</div>
+				</header>
+				<section class="panel-body form-horizontal">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Quantity</th>
+								<th>Price</th>
+								<th>Total</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Sompop</td>
+								<td>5</td>
+								<td>{{4 | currency}}</td>
+								<td>{{20 | currency}}</td>
+							</tr>
+							<tr>
+								<td>Sompap</td>
+								<td>7</td>
+								<td>{{4 | currency}}</td>
+								<td>{{28 | currency}}</td>
+							</tr>
+							<tr>
+								<td colspan="3">Total</td>
+								
+								<td>{{48 | currency}}</td>
+							</tr>
+
+						</tbody>
+						
+					</table>
+				</section>
+			</article>	
+		</div>
+		<div class="col-lg-6">
+			<article class="panel panel-primary">
+				<header class="panel-heading">
+					Payment
+					<div class="panel-options">
+						
+						<a href="" data-toggle="minimize">
+							<i class="fa fa-minus"></i>
+							<i class="fa fa-plus"></i>
+						</a>
+						<a href="" data-toggle="close"><i class="fa fa-remove"></i></a>
+					</div>
+				</header>
+				<section class="panel-body form-horizontal">
+					<form>
+						<label class="btn-radio">
+							<input type="radio" name="radioBtnDemo">
+							<span>Cash</span>
+						</label>
+						<label class="btn-radio">
+							<input type="radio" name="radioBtnDemo">
+							<span>Master Card</span>
+						</label>
+						<label class="btn-radio">
+							<input type="radio" name="radioBtnDemo">
+							<span>Visa</span>
+						</label>
+					</form>
+				</section>
+			</article>	
+			<article class="panel panel-danger">
+				<header class="panel-heading">
+					Payment Detail
+					<div class="panel-options">
+						
+						<a href="" data-toggle="minimize">
+							<i class="fa fa-minus"></i>
+							<i class="fa fa-plus"></i>
+						</a>
+						<a href="" data-toggle="close"><i class="fa fa-remove"></i></a>
+					</div>
+				</header>
+				<section class="panel-body form-horizontal">
+
+					
+					<form>
+
+						<input type="number" class="form-control" placeholder="Your amount" style="height:3em;font-size:1.5em;"/>
+
+
+					</form>
+					<table class="table" style="font-size:2em;">
+						<tr>
+							<td>Total Amount</td>
+							<td style="text-align:right">{{48 | currency}}</td>
+						</tr>
+						<tr>
+							<td>Tax</td>
+							<td  style="text-align:right">{{48*0.07 | currency}}</td>
+						</tr>
+						<tr>
+							<td>Payment Total</td>
+							<td  style="text-align:right">{{48*1.07 | currency}}</td>
+						</tr>
+						<tr class="bg-success">
+							<td>Customer Payment</td>
+							<td  style="text-align:right">{{60 | currency}}</td>
+						</tr>
+						<tr class="bg-info">
+							<td>Change</td>
+							<td  style="text-align:right">{{60 - (48*1.07) | currency}}</td>
+						</tr>
+					</table>
+					<button class="btn form-control btn-primary" ui-sref="app.pos.dashboard" ui-sref-active="active" >Confirm</button>
+				</section>
+			</article>	
+		</div>
+	</div>
+
+
+	
+		
+</section>

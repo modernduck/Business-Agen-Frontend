@@ -1,0 +1,213 @@
+<div id="page-heading">
+	<h3 class="page-title">Tasks</h3>
+</div>
+
+<section class="container-fluid" id="tasks-view">
+	
+	<div class="row">
+		<div class="col-xlg-3 col-lg-4 col-md-12 col-sm-12 col-xs-12">
+			<div class="row">
+				<div class="col-lg-12 col-md-6 col-sm-12 col-xs-12">
+					<div class="widget profile widget-lg">
+						<div class="widget-heading">
+							<p class="title">Project name, category</p>
+							<small class="subtitle">#category, #tagName</small>
+							<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="120px" height="120px" viewBox="0 0 120 120" count-to="87" count-from="0" duration="4">
+								<circle cx="60" cy="60" r="40" fill="#fff" stroke-width="15" stroke="#fff" />
+								<circle cx="60" cy="60" r="40" fill="#eaeff5" stroke-width="4" stroke="#65C9BF" stroke-dasharray="{{ output * (252/100) }},20000" transform="rotate(90, 60, 60)" />
+								<text text-anchor="middle" x="60" y="65" fill="#3A3367" style="font-size: 22px;">{{ output }}%</text>
+							</svg>
+						</div>
+						<div class="widget-body">
+							<div class="row">
+								<div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+									<p class="text-primary bolder counter" duration="4" count-to="32">{{ output }}</p>
+									<span class="title">Users</span>
+								</div>
+								<div class="col-lg-5 col-lg-offset-2 col-md-5 col-md-offset-2 col-sm-5 col-sm-offset-2 col-xs-5 col-xs-offset-2">
+									<p class="text-primary bolder counter" duration="4" count-to="132">{{ output }}</p>
+									<span class="title">Tasks</span>
+								</div>
+							</div>
+						</div>
+						<div class="widget-footer">
+							<a href="" class="person" ng-repeat="user in users" bs-tooltip="{ title: user.name }" data-placement="bottom">
+								<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" viewBox="0 0 230 230">
+									<defs>
+										<clipPath id="myClip1">
+											<path fill="#FFFFFF" d="M218.5,112.667C218.5,123.333,126.666,215,116.166,215S13.832,126,13.832,112.667 s87.5-102.333,102.333-102.333S218.5,102,218.5,112.667z"/>
+										</clipPath>
+									</defs>
+									<image x="0" y="10" width="230" height="230" xlink:href="assets/img/avatar/avatar200.png" style="clip-path:url(#myClip1);" />
+									<path fill="#fff" d="M116.128,19.572c5.27,2.409,22.242,15.56,49.901,43.779c23.378,23.852,38.753,42.554,42.787,49.235
+										c-3.956,6.25-18.6,23.593-43.896,48.868c-25.187,25.167-42.496,39.793-48.803,43.823c-6.436-3.999-24.206-18.657-49.001-43.113
+										c-27.674-27.295-41.03-44.065-43.919-49.563c2.983-5.978,17.438-24.394,42.817-49.953C92.23,36.246,110.426,22.07,116.128,19.572
+										 M116.166,10.333c-14.834,0-102.333,89-102.333,102.333C13.833,126,105.667,215,116.167,215S218.5,123.333,218.5,112.666
+										C218.5,102,131,10.333,116.166,10.333L116.166,10.333z" stroke-width="2" stroke="#fff" />
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-12 col-md-6 col-sm-12 col-xs-12">			
+					<div class="panel panel-default">
+						<ul class="list-unstyled project-menu">
+							<li class="group-name">Project menu</li>
+							<li><a href><span class="icon-letter icon-fw icon-lg"></span> My tasks</a></li>
+							<li><a href><span class="icon-list icon-fw icon-lg"></span> All tasks</a></li>
+							<li class="divider"></li>
+							<li class="group-name">Projects</li>
+							<li><a href ng-click="openProject($event)" ng-repeat="project in projects">{{ project.title }}</a></li>
+							<li class="divider"></li>
+							<li class="group-name">Project tags</li>
+							<li><a href=""><span class="fa fa-circle text-info fa-fw"></span> Tag name 1</a></li>
+							<li><a href=""><span class="fa fa-circle text-success fa-fw"></span> Tag name 2</a></li>
+							<li><a href=""><span class="fa fa-circle text-primary fa-fw"></span> Tag name 3</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-xlg-9 col-lg-8 col-md-12 col-sm-12 col-xs-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<input type="text" class="form-control input-lg" placeholder="Add new task ..." ng-keydown="addTask($event)" ng-model="task">
+				</div>
+				<div class="panel-body debut-tasks-list">
+					<div ng-repeat="group in open_project.tasks | groupBy:'status'">
+						<div class="row" ng-class="{ done: task.status }" ng-repeat="task in group  | orderBy: '-date'">
+							<div class="col-xlg-10 col-lg-9 col-md-9 col-sm-9 col-xs-9">
+								<label class="btn-check">
+									<input type="checkbox" ng-model="task.status" ng-value="true">
+									<span></span>
+								</label>
+								<p class="title">{{ task.title }}</p>
+								<small class="author">by <a href class="text-blocked">{{ task.author }}</a> <span ng-if="task.assing">assing to</span> <a href ng-if="task.assing" class="text-blocked">{{ task.assing }}</a></small>
+							</div>
+							<div class="col-lg-1 col-md-1 col-sm-1 col-xs-2">
+								<span ng-if="task.priority==1 && !task.status" class="label label-primary">Minor</span>
+								<span ng-if="task.priority==2 && !task.status" class="label label-success">To Do</span>
+								<span ng-if="task.priority==3 && !task.status" class="label label-info">In progress</span>
+								<span ng-if="task.priority==4 && !task.status" class="label label-danger">Major</span>
+								<span ng-if="task.priority==5 || task.status" class="label label-success">Complete</span>
+							</div>
+							<div class="col-xlg-1 col-lg-1 col-md-1 col-sm-2 col-xs-2 hidden-xs" ng-if="task.duration && !task.date">
+								<span class="fa fa-calendar-o"></span> Duration
+								<div class="time">{{ task.duration.start | date: 'dd.MM' }} - {{ task.duration.end | date: 'dd.MM' }}</div>
+							</div>
+							<div class="col-xlg-1 col-lg-1 col-md-2 col-sm-2 col-xs-2 hidden-xs text-center" ng-if="!task.duration && task.date">
+								<span class="icon-wallclock"> Date</span> 
+								<div class="time">{{ task.date | date: 'dd.MM' }}</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+			<div class="project widget widget-lg">
+				<div class="widget-body">
+					<p class="subtitle">Category name</p>
+					<p class="title">New desing for the client</p>
+					<div class="estimation">
+						<div class="time-spent">
+							<p class="counter">21</p>
+							<span>Days working on project</span>
+						</div>
+						<div class="time-left">
+							<p class="counter">11</p>
+							<span>Days left till 2nd milestone</span>
+						</div>
+					</div>
+				</div>
+				<div class="widget-footer">
+					<div class="row">
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+							<span>14</span>
+							<span class="fa fa-clock-o"></span>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+							<span>45</span>
+							<span class="fa fa-comment-o"></span>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+							<span>22</span>
+							<span class="fa fa-calendar"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+			<div class="project widget widget-lg">
+				<div class="widget-body">
+					<p class="subtitle">Category name</p>
+					<p class="title">New desing for the client</p>
+					<div class="estimation">
+						<div class="time-spent">
+							<p class="counter">21</p>
+							<span>Days working on project</span>
+						</div>
+						<div class="time-left">
+							<p class="counter">11</p>
+							<span>Days left till 2nd milestone</span>
+						</div>
+					</div>
+				</div>
+				<div class="widget-footer">
+					<div class="row">
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+							<span>14</span>
+							<span class="fa fa-clock-o"></span>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+							<span>45</span>
+							<span class="fa fa-comment-o"></span>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+							<span>22</span>
+							<span class="fa fa-calendar"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+			<div class="project widget widget-lg">
+				<div class="widget-body">
+					<p class="subtitle">Category name</p>
+					<p class="title">New desing for the client</p>
+					<div class="estimation">
+						<div class="time-spent">
+							<p class="counter">21</p>
+							<span>Days working on project</span>
+						</div>
+						<div class="time-left">
+							<p class="counter">11</p>
+							<span>Days left till 2nd milestone</span>
+						</div>
+					</div>
+				</div>
+				<div class="widget-footer">
+					<div class="row">
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+							<span>14</span>
+							<span class="fa fa-clock-o"></span>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+							<span>45</span>
+							<span class="fa fa-comment-o"></span>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+							<span>22</span>
+							<span class="fa fa-calendar"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,123 @@
+<div id="page-heading">
+	<h3 class="page-title">Active Bill</h3>
+</div>
+<section class="container-fluid">
+	<div class="row">
+		<div class="col-lg-8 col-md-7">
+			<article class="panel panel-primary">
+				<header class="panel-heading">
+					Product
+					<div class="panel-options">
+						<a href="" data-toggle="refresh"><i class="fa fa-refresh"></i></a>
+						<a href="" data-toggle="minimize">
+							<i class="fa fa-minus"></i>
+							<i class="fa fa-plus"></i>
+						</a>
+						<a href="" data-toggle="close"><i class="fa fa-remove"></i></a>
+					</div>
+				</header>
+				<section class="panel-body">
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12">
+							<form>
+								<div class="form-inline" role="form">
+									<div class="form-group"><input type="text" class="form-control" placeholder="Your barcode / name"></div>
+									<div class="form-group"><button class="btn btn-primary pull-right">Search</button></div>
+
+
+								</div>
+							</form>
+						</div>
+					</div>
+					<div style="padding-top:20px;text-align:center;padding-left:20px;">
+						<img src="http://placehold.it/150x150" style="margin-right:20px;margin-bottom:20px;"/>
+						<img src="http://placehold.it/150x150" style="margin-right:20px;margin-bottom:20px;"/>
+						<img src="http://placehold.it/150x150" style="margin-right:20px;margin-bottom:20px;"/>
+						<img src="http://placehold.it/150x150" style="margin-right:20px;margin-bottom:20px;"/>
+						<img src="http://placehold.it/150x150" style="margin-right:20px;margin-bottom:20px;"/>
+						<img src="http://placehold.it/150x150" style="margin-right:20px;margin-bottom:20px;"/>
+						<img src="http://placehold.it/150x150" style="margin-right:20px;margin-bottom:20px;"/>
+						<img src="http://placehold.it/150x150" style="margin-right:20px;margin-bottom:20px;"/>
+					</div>
+				
+				</section>
+				
+
+					
+				
+			</article>
+		</div>
+		<div class="col-lg-4 col-md-5">
+			<article class="panel panel-primary">
+				<header class="panel-heading">
+					Summerize
+					<div class="panel-options">
+						
+						<a href="" data-toggle="minimize">
+							<i class="fa fa-minus"></i>
+							<i class="fa fa-plus"></i>
+						</a>
+						<a href="" data-toggle="close"><i class="fa fa-remove"></i></a>
+					</div>
+				</header>
+				<section class="panel-body form-horizontal">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Quantity</th>
+								<th>Price</th>
+								<th>Total</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Sompop</td>
+								<td>5</td>
+								<td>{{4 | currency}}</td>
+								<td>{{20 | currency}}</td>
+							</tr>
+							<tr>
+								<td>Sompap</td>
+								<td>7</td>
+								<td>{{4 | currency}}</td>
+								<td>{{28 | currency}}</td>
+							</tr>
+							<tr>
+								<td colspan="3">Total</td>
+								
+								<td>{{48 | currency}}</td>
+							</tr>
+
+						</tbody>
+						
+					</table>
+
+					<button ui-sref="app.pos.activebill.payment" ui-sref-active="active"  type="button" class="pull-right btn btn-lg btn-primary ">Comfirm</button>
+				</section>
+			</article>	
+		</div>
+	</div>
+	
+	
+	<article class="panel panel-success">
+		<header class="panel-heading">
+			Product Information
+			<div class="panel-options">
+				
+				<a href="" data-toggle="minimize">
+					<i class="fa fa-minus"></i>
+					<i class="fa fa-plus"></i>
+				</a>
+				<a href="" data-toggle="close"><i class="fa fa-remove"></i></a>
+			</div>
+		</header>
+		<section class="panel-body form-horizontal">
+			<img src="http://placehold.it/150x150" style="margin-right:20px;margin-bottom:20px;"/>
+			this is a product
+
+			
+		</section>
+	</article>
+		
+</section>

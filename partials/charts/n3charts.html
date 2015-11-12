@@ -1,0 +1,38 @@
+<div id="page-heading">
+	<h3 class="page-title">n3 Charts</h3>
+</div>
+
+<section class="container-fluid">
+	<article class="panel panel-default">
+		<header class="panel-heading">BarChart</header>
+		<section class="panel-body" style="position:relative">
+			<nvd3 options='barchart_options' data='barchart'></nvd3>
+		</section>
+	</article>
+
+	<article class="panel panel-default">
+		<header class="panel-heading">Multibar chart</header>
+		<section class="panel-body">
+			<nvd3 options='multibar_options' data='multibar'></nvd3>
+		</section>
+	</article>
+
+	<div class="row">
+		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+			<article class="panel panel-default">
+				<header class="panel-heading">Pie chart</header>
+				<section class="panel-body">
+					<nvd3 options='pie_options' data='pie'></nvd3>
+				</section>
+			</article>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+			<article class="panel panel-default">
+				<header class="panel-heading">Stocked area chart</header>
+				<section class="panel-body">
+					<nvd3 options='stockedArea_options' data='stockedArea'></nvd3>
+				</section>
+			</article>
+		</div>
+	</div>
+</section>

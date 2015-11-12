@@ -1,0 +1,21 @@
+<div class="month widget">
+	<div class="widget-heading text-center">
+		<h2 class="title light">{{ current.format('MMMM') }}</h2>
+		<small>{{ current.format('YYYY') }}</small>
+
+		<nav>
+			<button class="btn btn-link fa fa-angle-left " ng-click="$next($event)"></button>
+			<button class="btn btn-link fa fa-angle-right" ng-click="$prev($event)"></button>
+		</nav>
+	</div>
+	<div class="widget-body">
+		<div class="row">
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center">
+				<a href="">Date from</a>
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center">
+				<a href="">Date to</a>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,13 @@
+<div class="item">
+	<a href ng-click="toggle(this)" data-nodrag>
+		<i class="fa fa-chevron-down" ng-hide="collapsed"></i>
+		<i class="fa fa-chevron-right" ng-show="collapsed"></i>
+	</a>
+	<span ui-tree-handle>{{node.title}}</span>
+
+	<a href class="btn btn-link btn-xs pull-right" data-nodrag ng-click="remove(this)"><i class="fa fa-trash-o"></i></a>
+	<a href class="btn btn-link btn-xs pull-right" data-nodrag ng-click="insertNode($index, { id: 10, title: 'Sort item 1'})"><i class="fa fa-plus"></i></a>
+</div>
+<ol ui-tree-nodes ng-model="node.nodes" ng-if="node.nodes" ng-hide="collapsed">
+	<li ng-repeat="node in node.nodes" ui-tree-node ng-include="'partials/tpl/uitree.html'"></li>
+</ol>
